@@ -12,16 +12,20 @@ export default function PostCard ({
 }: {
   userFullName: string
   userName: string
-  avatarUrl: string
+  avatarUrl: string | null
   content: string
 }) {
   return (
     <Card className="shadow-none bg-transparent hover:bg-slate-800 transition border-b rounded-none cursor-pointer border-white/20">
       <CardHeader className="justify-between">
         <div className="flex gap-x-2">
-          <Link href={`/${userName}`}>
-            <Avatar radius="full" size="md" src={avatarUrl} />
-          </Link>
+          {(avatarUrl != null)
+            ? (
+              <Link href={`/${userName}`}>
+                <Avatar radius="full" size="md" src={avatarUrl} alt="" />
+              </Link>
+              )
+            : ''}
           <div className="flex flex-col gap-1 items-start justify-center">
             <h4 className="text-small font-semibold leading-none text-default-600">{userFullName}</h4>
             <h5 className="text-small tracking-tight text-default-400">@{userName}</h5>

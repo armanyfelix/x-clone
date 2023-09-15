@@ -1,11 +1,14 @@
 import PostCard from './post-card'
-import { type Post } from '@/app/types/posts'
 
-export function PostLists ({ posts }: { posts: Post[] | null }) {
+interface Props {
+  posts: any
+}
+
+export function PostLists ({ posts }: Props) {
   return (
     <>
     {
-        posts?.map(post => {
+        posts?.map((post: any) => {
           const {
             id,
             user,

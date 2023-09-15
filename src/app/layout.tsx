@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Providers } from './providers'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Clon de Twitter',
   description: 'Generado moviendo las manitas'
